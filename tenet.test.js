@@ -8,4 +8,15 @@ test('exposes value', () => {
 
 test('modifies value with pure function', () => {
   expect(Tenet(1).apply(x => x + 1).value).toBe(2);
+  expect(Tenet(1).apply(x => x + 1).apply(x => x + 3).value).toBe(5);
+  expect(Tenet("Hello").apply(x => `${x} World`).value).toBe("Hello World");
+  expect(Tenet([1,2,3]).apply(x => x.reverse()).value).toStrictEqual([3,2,1]);
+});
+
+test('inverts modified value', () => {
+  expect(Tenet(1).apply(x => x + 1).invert().value).toBe(1);
+  expect(Tenet(1).apply(x => x + 1).apply(x => x + 3).invert().value).toBe(2);
+  expect(Tenet(1).apply(x => x + 1).apply(x => x + 3).invert().invert().value).toBe(1);
+
+  expect(Tenet("Hello").apply(x => `${x} World`).invert().value).toBe("Hello");
 });
