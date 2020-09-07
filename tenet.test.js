@@ -20,3 +20,8 @@ test('inverts modified value', () => {
 
   expect(Tenet("Hello").apply(x => `${x} World`).invert().value).toBe("Hello");
 });
+
+test('throws error when it is not invertible', () => {
+  expect(() => { Tenet(1).invert() }).toThrowError();
+  expect(() => { Tenet(1).apply(x => x + 1).invert().invert() }).toThrowError();
+})

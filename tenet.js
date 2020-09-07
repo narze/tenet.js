@@ -5,6 +5,7 @@ function Tenet(value, snapshots = []) {
       return Tenet(fn(value), [...snapshots, value])
     },
     invert: () => {
+      if (!snapshots.length) { throw new Error("Value not invertible")}
       return Tenet(snapshots.pop(), snapshots)
     }
   };
