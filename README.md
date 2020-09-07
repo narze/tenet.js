@@ -1,5 +1,7 @@
 # Tenet.js
 
+[![npm version](https://badge.fury.io/js/tenet.js.svg)](https://badge.fury.io/js/tenet.js)
+
 Inverts the entropy of objects
 
 ## Why?
