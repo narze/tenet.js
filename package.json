@@ -1,0 +1,10 @@
+{
+  "name": "tenet.js",
+  "version": "1.0.0",
+  "description": "Inverts the entropy of objects",
+  "main": "tenet.js",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
+}
